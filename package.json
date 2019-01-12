@@ -1,0 +1,8 @@
+{
+  "name": "movie",
+  "version": "1.0.0",
+  "description": "movieql with graqphql",
+  "main": "index.js",
+  "author": "park",
+  "license": "MIT"
+}
