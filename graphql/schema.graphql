@@ -2,19 +2,12 @@
 
 type Movie{
     id:Int!
-    name:String!
-    score:Int!
-    
+    title:String!
+    rating:Int!
+    language: String!
+    medium_cover_image: String!
 }
 
 type Query{
     movies:[Movie]!
-    movie(id:Int!):Movie
 } 
-
-type Mutation{
-    addMovie(name:String!, score:Int!): Movie!
-    # 여기서 Movie! 이런형식을 반환하면 결국 addMovie도 같은 형식을 return 해야한다 .
-    deleteMovie(id:Int!):Boolean!
-    
-}
