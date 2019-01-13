@@ -13,5 +13,8 @@ type Query{
 } 
 
 type Mutation{
-    addMovie(name:String!, score:int!): Movie!
+    addMovie(name:String!, score:Int!): Movie!
+    # 여기서 Movie! 이런형식을 반환하면 결국 addMovie도 같은 형식을 return 해야한다 .
+    deleteMovie(id:Int!):Boolean!
+    
 }

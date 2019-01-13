@@ -1,4 +1,4 @@
-const movies = [
+let movies = [
     {
         id: 0,
         name: "Star Wars - The new one",
@@ -34,8 +34,22 @@ export const getById = id => {
 export const deleteMovie = (id) =>{
     const cleanMovies = movies.filter(movie => movie.id !== id)
     if (movies.length > cleanMovies.length){
+        movies = cleanMovies;
         return true;
     }else{
-        return false
+        return false;
     }
 };
+
+
+export const addMovie = (name, score) => {
+    const newMovie ={
+        id: parseInt(`${movies.length + 1}`),
+        name,
+        score
+    }
+    movies.push(newMovie);
+    return newMovie;
+    //여기서 스키마는 반환형식이 Movie! 이런형식을 
+    //반환하면 결국 addMovie도 같은 형식을 return 해야한다 .
+}

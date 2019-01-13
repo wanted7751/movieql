@@ -1,15 +1,14 @@
-import {getMovies, getById} from "./db";
+import { getMovies, getById, addMovie, deleteMovie } from "./db";
 
-
-
-const resolvers ={
-    Query:{
+const resolvers = {
+    Query: {
         movies: () => getMovies(),
-        movie:(_,{id}) => getById(id)
-        
+        movie: (_, { id }) => getById(id)
+    },
+    Mutation: {
+        addMovie: (_, { name, score }) => addMovie(name, score),
+        deleteMovie: (_, { id }) => deleteMovie(id)
     }
-}
-// 먼저 graphql은 person의 정의와 타입을 볼것이고
-
+};
 
 export default resolvers;
