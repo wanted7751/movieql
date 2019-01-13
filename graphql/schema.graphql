@@ -1,5 +1,15 @@
+type Sex{
+    a:String!
+}
+
+type Nicolas{
+    name: String!
+    age: Int!
+    gender: Sex!
+}
+
 type Query{
-    name:String!
+    person:Nicolas!
 }
 
 
