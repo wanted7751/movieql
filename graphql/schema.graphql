@@ -1,17 +1,13 @@
-type Sex{
-    a:String!
-}
 
-type Nicolas{
-    name: String!
-    age: Int!
-    gender: Sex!
+
+type Person{
+    id:Int!
+    name:String!
+    age:Int!
+    gender:String!
 }
 
 type Query{
-    person:Nicolas!
-}
-
-
-
-
+    people:[Person]!
+    person(id:Int!):Person
+} 

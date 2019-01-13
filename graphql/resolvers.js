@@ -1,16 +1,15 @@
-const sex ={
-    a:"b"
-}
-const nicolas = {
-    name:"nicolas",
-    age:18,
-    gender:sex
-}
+import {people, getById} from "./db";
 
-const resolvers= {
+
+
+const resolvers ={
     Query:{
-        person: () => nicolas
+        people: () => people,
+        person:(_,{id}) => getById(id)
+        
     }
 }
+// 먼저 graphql은 person의 정의와 타입을 볼것이고
+
 
 export default resolvers;
