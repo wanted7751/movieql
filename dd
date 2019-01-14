@@ -4,15 +4,15 @@ const API_URL = "https://yts.am/api/v2/list_movies.json?";
 
 export const getMovies = (limit, rating) => {
     let REQUETURL = API_URL;
-    if (limit > 0) {
+    if(limit > 0){
         REQUETURL += `limit=${limit}`;
     }
-    if (rating > 0) {
+    if(rating > 0){
         REQUETURL += `&minimun_rating=${rating}`;
     }
     return fetch(REQUETURL)
-        .then(res => res.json())
-        .then(json => json.data.movies);
-
+      .then(res => res.json())
+      .then(json => json.data.movie);
+    
 };
-
+    
